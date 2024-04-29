@@ -40,7 +40,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".wasm", ".mjs", ".cjs", ".js", ".json"],
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
@@ -56,4 +56,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  devServer: {
+    static: "./dist",
+    watchFiles: ["./src/*"],
+  },
 };
